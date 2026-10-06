@@ -1,6 +1,6 @@
 """
 DFS -> IDA* benchmark tren bai toan dinh tuyen tranh ngap lut.
-Baseline (romania_map, make_undirected, GraphProblem, Node) copy nguyen tu Lec3/Lec4 cua co.
+Baseline tu file Lec3 & Lec4 cua co Dung
 Dinh dang tra ve chung cua ca team: return path, cost, st
     st = {"expanded": int, "peak_struct": int, "iterations": int}
 """
