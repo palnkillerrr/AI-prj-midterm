@@ -363,7 +363,7 @@ def benchmark(solver, problem, repetitions=1, single_run=False):
             tracemalloc.stop()
         return {"status": "FAILED", "reason": f"exception: {e!r}"}
 
-# ======================= BO TEST CUC BO (Section 12-17; cua Duc se thay the khi tich hop) =======================
+# ======================= BO TEST CUC BO (Section 12-17) =======================
 def make_test(test_id, category, graph, start, goal, locations, description, reps=1, C_v=60, alpha=2):
     return {"test_id": test_id, "category": category, "graph": graph, "start": start, "goal": goal,
             "locations": locations, "C_v": C_v, "alpha": alpha, "description": description, "reps": reps}
