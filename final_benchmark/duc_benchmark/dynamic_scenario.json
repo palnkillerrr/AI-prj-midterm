@@ -1,0 +1,8 @@
+{
+  "description": "Integration scenario proposed by Duc, not claimed as the teacher's original test. Fixed start and goal; both directions of each road are updated together.",
+  "base_test_id": "common_romania_flood42",
+  "updates": [
+    {"edges": [{"u": "Rimnicu", "v": "Pitesti", "cost": "inf"}, {"u": "Pitesti", "v": "Rimnicu", "cost": "inf"}]},
+    {"edges": [{"u": "Rimnicu", "v": "Pitesti", "cost": 194.0}, {"u": "Pitesti", "v": "Rimnicu", "cost": 194.0}]}
+  ]
+}

@@ -1,0 +1,77 @@
+THAY ĐỔI TRÊN BẢN TÍCH HỢP
+==========================
+File trong Downloads không bị sửa. Bản gốc đã giữ trong work/source_original khi làm việc.
+
+solvers/ucs_biucs_benchmark.py
+- uniform_cost_search: bỏ nhánh return sớm start==goal; root được pop và đếm 1 như
+  các thuật toán khác. Ghi peak_frontier ban đầu là 1.
+- Kiểm tra goal trước khi sinh children; dùng generator Node.expand trực tiếp.
+  Bản cũ cấp phát list con cả khi đã pop goal. Không đổi chiến lược ưu tiên g.
+- bidirectional_ucs: bỏ child có path_cost không hữu hạn trước khi tra g_this[s].
+  Bản gốc crash KeyError với graph {'s': {'t': inf}, 't': {}}. Bản sửa trả vô nghiệm.
+- start==goal dùng heap singleton, pop và đếm forward=1, backward=0. Khởi tạo peak
+  tổng hai heap bằng 2 cho trường hợp thường.
+- Giữ nguyên graph đảo, tie FIFO, chọn phía có g nhỏ hơn, cập nhật mu và điều kiện
+  top_forward + top_backward >= mu; không dừng ngay ở điểm gặp đầu tiên.
+
+solvers/dfs_2_idastar.py
+- solve_ida_star: peak path tối thiểu 1; cập nhật cả child/goal trước khi return.
+  Romania ngập vẫn expanded=63, 11 vòng; path gồm 5 node nên peak_frontier >=5,
+  thay vì 4 như bản gốc. Hành lang 100 node báo peak=100 thay vì 99.
+- solve_dfs và solve_astar_reference: peak_frontier khởi tạo bằng 1.
+- Không thay chiến lược DFS LIFO, IDA* iterative f-threshold, path-cycle detection,
+  thứ tự láng giềng hay heuristic. Không thêm visited toàn cục vào IDA*.
+
+File mới
+- cases.py: ghép test chung và giữ nguyên bộ sinh test riêng, chuyển cost ngập
+  thành cost số chung, ghi SHA256 gồm cả thứ tự láng giềng.
+- benchmark_common.py: một nơi đo time/memory; oracle Dijkstra độc lập; validate
+  mọi lần; process timeout; kiểm tra input mutation; CSV/JSON/raw mẫu/checkpoint.
+- test_common.py: 11 test methods; 300 đồ thị random x 5 solver, đồ thị có hướng,
+  zero-cost/cost float/cạnh inf/nhãn hỗn hợp; cutoff, goal, lỗi wrapper và timeout.
+  Một test dùng planner stub (không phải D* Lite) để xác nhận vòng đời dynamic.
+- dynamic_runner.py và dynamic_scenario.json: hook giữ planner state, tách initial
+  và repair; chưa có implementation D* Lite nên chưa có benchmark dynamic thật.
+
+VÌ SAO KHÔNG GHÉP THẲNG BẢNG CŨ
+- DFS: Romania có ngập seed42, optimum 657.85; UCS: đường khô, optimum 418.
+- DFS mặc định: time không tracemalloc, trung bình; UCS: time có tracemalloc,
+  trung vị. DFS memory đo 1 lần riêng; UCS memory lấy trung vị nhiều lần.
+- IDs khác và chưa có bộ fixture chung được đính kèm. BENCHMARK.md mô tả cấu trúc
+  nhưng không cung cấp toàn bộ graph/test cố định cho mọi nhóm.
+- Báo cáo mới dùng kết quả chạy lại trên cùng môi trường. Không trộn time/memory
+  cũ với mới. Cost và expanded lịch sử chỉ dùng đối chiếu tính tái lập logic.
+
+ĐIỂM CẦN SỬA TRONG TRANG A4 CŨ
+- 'chỉ giữ tối đa 4 nút' trên đường 4 cạnh là thiếu goal; sửa thành 5 node.
+- Hành lang '100 nút' thực tế có 100 node chính và 100 nhánh cụt = 200 node graph.
+- Định nghĩa O(d) áp dụng bộ nhớ tìm kiếm với b cố định, không bao gồm graph đầu vào.
+- Không khẳng định IDA* luôn dùng ít RAM hơn DFS/A*. Mẫu hành lang cũ cho IDA*
+  62.7 KB, A* 35.3 KB; lợi ích bộ nhớ phụ thuộc cấu trúc và cài đặt.
+- Nhận định 'continuous vs quantized' không chỉ do số vòng: weight và đường tối ưu
+  cũng khác. Đây là hai cost field trên cùng topology, chưa phải thử nghiệm chỉ
+  thay một biến giữ mọi thứ còn lại.
+- Giảm expanded của Bi-UCS không đảm bảo giảm time/memory vì thêm bookkeeping và
+  dựng graph đảo. Chuỗi 2000 node: 1999 vs 2000 expanded (gần bằng, không đúng bằng).
+
+BỔ SUNG 18/10/2026: A* -> D* Lite
+================================
+- Giữ nguyên byte file Phương Anh trong solvers và original_submissions.
+- Registry có A* thật và D* Lite; A* (ref) vẫn tách tên. cases.py thêm hai solver
+  vào 7 input chung, thêm 5 input tĩnh gốc; không biến test dynamic thành cold run.
+- dstar_adapter.py giữ nguyên 1 planner/episode; phase delta expanded; cập nhật
+  cạnh có hướng đúng danh sách, thêm predecessor khi thêm arc giữa node có sẵn;
+  move_start cập nhật km. Không gọi search trong update hoặc move_start.
+- Adapter kiểm tra cost dương trước mọi cập nhật. Đây là giới hạn rõ ràng sau khi
+  tìm thấy counterexample dynamic cost 0; không sửa thuật toán để che lỗi.
+- dynamic_runner.py nối 9 scenario động gốc (gồm --full 15x15) và giữ scenario
+  tích hợp cũ. Sự kiện flood gốc đổi hai chiều, tính lại numeric cost chính xác.
+- Thêm preflight, process timeout, validate mọi phase/repetition, hash snapshot,
+  raw samples, CSV và totals episode/repair; validate sau khi dừng tracemalloc.
+- Sửa IPC wrapper sang subprocess + file riêng. File transport/khởi động nằm
+  ngoài solver timer. Timeout và quy tắc failure không có số liệu giả được giữ.
+- Thêm test_dstar.py và run_checks.py; giữ 11 test cũ + 9 test mới.
+- Kết quả cuối chạy tuần tự; không ghép timing khảo sát sơ bộ hoặc timing cũ.
+- build_report.py điền trang 3 từ dynamic.json, cập nhật ngày ở cả 3 trang.
+  Các trang 1/2 cũng đọc benchmark.json mới; giữ phong cách hồng/xanh và A4.
+- File Downloads và thư mục nguồn người dùng không bị ghi sửa.

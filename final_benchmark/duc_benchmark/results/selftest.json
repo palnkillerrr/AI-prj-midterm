@@ -1,0 +1,11 @@
+{
+  "tests_run": 20,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "success": true,
+  "static_random_graphs": 300,
+  "static_solvers": 7,
+  "dynamic_random_episodes": 300,
+  "dynamic_phases_per_episode": 10
+}

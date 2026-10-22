@@ -1,0 +1,137 @@
+COMMON BENCHMARK
+Time and peak Python allocations measured together with tracemalloc ON.
+Time/Memory = median of per-run samples; peak bytes / 1024 (KiB, labelled KB per spec).
+
+Test | Algorithm | Status | Cost | Expanded | Time ms | Peak KB
+common_romania_dry | DFS | PASS | 838.0 | 9 | 0.1871 | 4.77
+common_romania_dry | IDA* | PASS | 418.0 | 21 | 0.4795 | 6.03
+common_romania_dry | UCS | PASS | 418.0 | 13 | 0.1834 | 4.27
+common_romania_dry | Bi-UCS | PASS | 418.0 | 10 | 0.3135 | 10.52
+common_romania_dry | A* (ref) | PASS | 418.0 | 6 | 0.1756 | 4.12
+common_romania_dry | A* | PASS | 418.0 | 6 | 0.1905 | 4.09
+common_romania_dry | D* Lite | PASS | 418.0 | 5 | 0.4820 | 8.65
+common_romania_flood42 | DFS | PASS | 1335.8033333333333 | 9 | 0.1818 | 4.77
+common_romania_flood42 | IDA* | PASS | 657.8533333333334 | 63 | 1.1966 | 8.05
+common_romania_flood42 | UCS | PASS | 657.8533333333334 | 12 | 0.1787 | 4.30
+common_romania_flood42 | Bi-UCS | PASS | 657.8533333333334 | 12 | 0.3579 | 11.47
+common_romania_flood42 | A* (ref) | PASS | 657.8533333333334 | 11 | 0.2276 | 4.91
+common_romania_flood42 | A* | PASS | 657.8533333333334 | 11 | 0.2513 | 4.90
+common_romania_flood42 | D* Lite | PASS | 657.8533333333334 | 8 | 0.4566 | 8.55
+common_romania_blocked | DFS | PASS | 1930.9833333333336 | 12 | 0.2141 | 5.10
+common_romania_blocked | IDA* | PASS | 785.71 | 61 | 1.0788 | 7.45
+common_romania_blocked | UCS | PASS | 785.71 | 12 | 0.1639 | 4.19
+common_romania_blocked | Bi-UCS | PASS | 785.71 | 14 | 0.3662 | 11.10
+common_romania_blocked | A* (ref) | PASS | 785.71 | 11 | 0.2228 | 4.64
+common_romania_blocked | A* | PASS | 785.71 | 11 | 0.2257 | 4.60
+common_romania_blocked | D* Lite | PASS | 785.71 | 11 | 0.5219 | 8.59
+common_corridor100 | DFS | PASS | 990.0 | 100 | 1.4898 | 51.60
+common_corridor100 | IDA* | PASS | 990.0 | 100 | 2.0598 | 71.23
+common_corridor100 | UCS | PASS | 990.0 | 199 | 1.6620 | 31.46
+common_corridor100 | Bi-UCS | PASS | 990.0 | 196 | 4.9933 | 102.59
+common_corridor100 | A* (ref) | PASS | 990.0 | 100 | 2.2135 | 48.99
+common_corridor100 | A* | PASS | 990.0 | 100 | 1.6524 | 48.95
+common_corridor100 | D* Lite | PASS | 990.0 | 100 | 4.4027 | 88.50
+common_grid4_continuous | DFS | PASS | 104.93333333333334 | 7 | 0.1907 | 4.55
+common_grid4_continuous | IDA* | PASS | 85.43333333333332 | 478 | 11.3021 | 10.80
+common_grid4_continuous | UCS | PASS | 85.43333333333332 | 16 | 0.3426 | 5.02
+common_grid4_continuous | Bi-UCS | PASS | 85.43333333333334 | 12 | 0.3676 | 11.64
+common_grid4_continuous | A* (ref) | PASS | 85.43333333333332 | 16 | 0.3117 | 5.27
+common_grid4_continuous | A* | PASS | 85.43333333333332 | 16 | 0.3296 | 5.23
+common_grid4_continuous | D* Lite | PASS | 85.43333333333332 | 13 | 0.9923 | 10.48
+common_same_node | DFS | PASS | 0 | 1 | 0.0609 | 1.50
+common_same_node | IDA* | PASS | 0 | 1 | 0.0826 | 2.20
+common_same_node | UCS | PASS | 0 | 1 | 0.0506 | 1.18
+common_same_node | Bi-UCS | PASS | 0 | 1 | 0.0359 | 0.69
+common_same_node | A* (ref) | PASS | 0 | 1 | 0.0712 | 1.91
+common_same_node | A* | PASS | 0 | 1 | 0.0902 | 1.65
+common_same_node | D* Lite | PASS | 0.0 | 1 | 0.2463 | 6.76
+common_unreachable | DFS | PASS | inf | 1 | 0.0736 | 2.16
+common_unreachable | IDA* | PASS | inf | 1 | 0.0812 | 2.52
+common_unreachable | UCS | PASS | inf | 1 | 0.0539 | 1.88
+common_unreachable | Bi-UCS | PASS | inf | 1 | 0.0836 | 3.47
+common_unreachable | A* (ref) | PASS | inf | 1 | 0.0722 | 1.98
+common_unreachable | A* | PASS | inf | 1 | 0.0815 | 2.03
+common_unreachable | D* Lite | PASS | inf | 1 | 0.1377 | 2.74
+dfs__baseline_romania_arad_bucharest | DFS | PASS | 1335.8033333333333 | 9 | 0.2021 | 4.77
+dfs__baseline_romania_arad_bucharest | IDA* | PASS | 657.8533333333334 | 63 | 2.1115 | 8.05
+dfs__baseline_romania_arad_bucharest | A* (ref) | PASS | 657.8533333333334 | 11 | 0.2682 | 4.91
+dfs__baseline_romania_oradea_giurgiu | DFS | PASS | 1387.46 | 14 | 0.2469 | 5.25
+dfs__baseline_romania_oradea_giurgiu | IDA* | PASS | 975.5600000000001 | 153 | 2.5748 | 10.38
+dfs__baseline_romania_oradea_giurgiu | A* (ref) | PASS | 975.5600000000001 | 12 | 0.2430 | 5.02
+dfs__baseline_romania_iasi_craiova | DFS | PASS | 1707.876666666667 | 11 | 0.2000 | 4.65
+dfs__baseline_romania_iasi_craiova | IDA* | PASS | 962.6933333333334 | 42 | 0.6971 | 7.66
+dfs__baseline_romania_iasi_craiova | A* (ref) | PASS | 962.6933333333334 | 9 | 0.2117 | 4.26
+dfs__baseline_romania_blocked_edge | DFS | PASS | 1930.9833333333336 | 12 | 0.2130 | 5.10
+dfs__baseline_romania_blocked_edge | IDA* | PASS | 785.71 | 61 | 1.0813 | 7.45
+dfs__baseline_romania_blocked_edge | A* (ref) | PASS | 785.71 | 11 | 0.2316 | 4.64
+dfs__best_romania_adjacent_dry | DFS | PASS | 676.0 | 13 | 0.2262 | 5.25
+dfs__best_romania_adjacent_dry | IDA* | PASS | 99.0 | 3 | 0.1388 | 2.82
+dfs__best_romania_adjacent_dry | A* (ref) | PASS | 99.0 | 2 | 0.1279 | 2.66
+dfs__best_corridor_100_dry | DFS | PASS | 990.0 | 100 | 1.3691 | 51.60
+dfs__best_corridor_100_dry | IDA* | PASS | 990.0 | 100 | 2.0808 | 71.23
+dfs__best_corridor_100_dry | A* (ref) | PASS | 990.0 | 100 | 1.6435 | 48.99
+dfs__worst_grid4x4_continuous_flood | DFS | PASS | 104.93333333333334 | 7 | 0.1613 | 4.55
+dfs__worst_grid4x4_continuous_flood | IDA* | PASS | 85.43333333333332 | 478 | 11.0722 | 10.80
+dfs__worst_grid4x4_continuous_flood | A* (ref) | PASS | 85.43333333333332 | 16 | 0.3017 | 5.27
+dfs__worst_grid5x5_continuous_flood | DFS | PASS | 127.6 | 9 | 0.3108 | 5.39
+dfs__worst_grid5x5_continuous_flood | IDA* | PASS | 102.53333333333335 | 1398 | 36.2614 | 12.00
+dfs__worst_grid5x5_continuous_flood | A* (ref) | PASS | 102.53333333333335 | 22 | 0.6605 | 7.36
+dfs__worst_grid6x6_continuous_flood | DFS | PASS | 155.83333333333334 | 11 | 0.4306 | 6.28
+dfs__worst_grid6x6_continuous_flood | IDA* | PASS | 152.66666666666669 | 85552 | 2793.2866 | 13.84
+dfs__worst_grid6x6_continuous_flood | A* (ref) | PASS | 152.66666666666669 | 36 | 0.6155 | 9.33
+dfs__worst_grid7x7_continuous_flood | DFS | PASS | 190.5 | 13 | 0.5741 | 7.12
+dfs__worst_grid7x7_continuous_flood | IDA* | PASS | 182.06666666666666 | 460482 | 11921.1572 | 15.07
+dfs__worst_grid7x7_continuous_flood | A* (ref) | PASS | 182.06666666666666 | 49 | 0.7765 | 12.30
+dfs__worst_grid8x8_continuous_flood | DFS | PASS | 246.90000000000003 | 15 | 0.2856 | 7.97
+dfs__worst_grid8x8_continuous_flood | IDA* | PASS | 204.93333333333334 | 2417004 | 63273.0773 | 16.49
+dfs__worst_grid8x8_continuous_flood | A* (ref) | PASS | 204.93333333333334 | 63 | 0.9847 | 14.48
+dfs__stress_grid6x6_dry_flood | DFS | PASS | 100.0 | 11 | 0.2201 | 6.28
+dfs__stress_grid6x6_dry_flood | IDA* | PASS | 100.0 | 1623 | 39.8409 | 13.30
+dfs__stress_grid6x6_dry_flood | A* (ref) | PASS | 100.0 | 36 | 0.6342 | 9.34
+dfs__stress_grid6x6_quantized_flood | DFS | PASS | 145.0 | 11 | 0.2213 | 6.28
+dfs__stress_grid6x6_quantized_flood | IDA* | PASS | 140.0 | 11242 | 269.8726 | 14.05
+dfs__stress_grid6x6_quantized_flood | A* (ref) | PASS | 140.0 | 36 | 0.7031 | 9.48
+dfs__stress_grid7x7_dry_flood | DFS | PASS | 120.0 | 13 | 1.4611 | 7.12
+dfs__stress_grid7x7_dry_flood | IDA* | PASS | 120.0 | 8303 | 206.9619 | 14.50
+dfs__stress_grid7x7_dry_flood | A* (ref) | PASS | 120.0 | 49 | 0.7687 | 12.70
+dfs__stress_grid7x7_quantized_flood | DFS | PASS | 195.0 | 13 | 0.2479 | 7.12
+dfs__stress_grid7x7_quantized_flood | IDA* | PASS | 145.0 | 11284 | 275.1316 | 14.98
+dfs__stress_grid7x7_quantized_flood | A* (ref) | PASS | 145.0 | 41 | 0.7181 | 12.59
+dfs__stress_grid8x8_dry_flood | DFS | PASS | 140.0 | 15 | 0.2710 | 7.97
+dfs__stress_grid8x8_dry_flood | IDA* | PASS | 140.0 | 37688 | 979.0063 | 15.70
+dfs__stress_grid8x8_dry_flood | A* (ref) | PASS | 140.0 | 64 | 1.2875 | 15.34
+dfs__stress_grid9x9_dry_flood | DFS | PASS | 160.0 | 17 | 0.3147 | 8.88
+dfs__stress_grid9x9_dry_flood | IDA* | PASS | 160.0 | 194826 | 5108.1174 | 16.91
+dfs__stress_grid9x9_dry_flood | A* (ref) | PASS | 160.0 | 81 | 2.5018 | 18.33
+dfs__stress_grid10x10_dry_flood | DFS | PASS | 180.0 | 19 | 0.5944 | 9.69
+dfs__stress_grid10x10_dry_flood | IDA* | PASS | 180.0 | 991907 | 26161.7657 | 19.04
+dfs__stress_grid10x10_dry_flood | A* (ref) | PASS | 180.0 | 100 | 1.5273 | 23.98
+dfs__stress_grid8x8_quantized_flood | DFS | PASS | 205.0 | 15 | 0.2785 | 7.97
+dfs__stress_grid8x8_quantized_flood | IDA* | PASS | 180.0 | 86860 | 2084.9274 | 16.26
+dfs__stress_grid8x8_quantized_flood | A* (ref) | PASS | 180.0 | 61 | 0.9892 | 15.15
+ucs__baseline_01 | UCS | PASS | 418 | 13 | 0.1786 | 4.19
+ucs__baseline_01 | Bi-UCS | PASS | 418 | 10 | 0.3023 | 10.21
+ucs__best_01 | UCS | PASS | 10 | 221 | 2.4599 | 42.81
+ucs__best_01 | Bi-UCS | PASS | 10 | 82 | 4.6852 | 275.55
+ucs__best_02 | UCS | PASS | 15 | 237 | 9.6123 | 378.80
+ucs__best_02 | Bi-UCS | PASS | 15 | 55 | 22.5751 | 1358.02
+ucs__worst_01 | UCS | PASS | 1999 | 2000 | 21.5928 | 319.84
+ucs__worst_01 | Bi-UCS | PASS | 1999 | 1999 | 41.5408 | 933.11
+ucs__worst_02 | UCS | PASS | 51 | 52 | 0.4946 | 11.09
+ucs__worst_02 | Bi-UCS | PASS | 51 | 3051 | 70.4068 | 1389.88
+ucs__worst_03 | UCS | PASS | 12 | 20 | 0.3141 | 4.74
+ucs__worst_03 | Bi-UCS | PASS | 12 | 19 | 0.4313 | 12.76
+ucs__stress_01 | UCS | PASS | 852 | 22497 | 408.1460 | 2554.69
+ucs__stress_01 | Bi-UCS | PASS | 852 | 17896 | 647.3386 | 9508.40
+ucs__stress_02 | UCS | PASS | 27 | 8262 | 391.9449 | 5104.11
+ucs__stress_02 | Bi-UCS | PASS | 27 | 220 | 180.9171 | 8374.68
+dstar__baseline_romania_arad_bucharest | A* | PASS | 657.8533333333334 | 11 | 0.2358 | 4.90
+dstar__baseline_romania_arad_bucharest | D* Lite | PASS | 657.8533333333334 | 8 | 0.5009 | 8.55
+dstar__baseline_romania_oradea_giurgiu | A* | PASS | 975.5600000000001 | 12 | 0.2463 | 5.01
+dstar__baseline_romania_oradea_giurgiu | D* Lite | PASS | 975.5600000000001 | 12 | 0.5667 | 9.53
+dstar__baseline_romania_iasi_craiova | A* | PASS | 962.6933333333334 | 9 | 0.2050 | 4.24
+dstar__baseline_romania_iasi_craiova | D* Lite | PASS | 962.6933333333334 | 15 | 0.5818 | 10.00
+dstar__baseline_romania_blocked_edge | A* | PASS | 785.71 | 11 | 0.2533 | 4.60
+dstar__baseline_romania_blocked_edge | D* Lite | PASS | 785.71 | 11 | 0.8438 | 8.59
+dstar__worst_static_grid7x7_no_updates | A* | PASS | 177.00000000000003 | 48 | 0.7763 | 12.99
+dstar__worst_static_grid7x7_no_updates | D* Lite | PASS | 177.00000000000003 | 47 | 1.9620 | 22.83

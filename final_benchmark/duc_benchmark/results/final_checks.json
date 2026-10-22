@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "unit_test_methods": 20,
+  "static_rows": 132,
+  "static_inputs": 39,
+  "dynamic_phase_rows": 184,
+  "dynamic_scenarios": 10,
+  "dynamic_snapshots": 92,
+  "historical_cost_expanded_rows_reproduced": 108,
+  "source_unchanged_sha256": "0e0711700fa13b13e2a1df6e265e52c6eeba875f65e37b6227d1852f335bd0c1",
+  "three_romania_maps_equal": true,
+  "sequential_measurement_runs": true,
+  "source_note": "Teacher notebook not supplied; equality is between three member files only.",
+  "dynamic_domain": "All finite costs strictly positive; zero-cost updates rejected explicitly.",
+  "code_sha256": {
+    "benchmark_common.py": "e58aa9fffb958c7bc695c3049345d904832b60391eca35d2080d8acc1249e213",
+    "build_report.py": "b9ea61a021473458061bdc0ab10ca65e31498e33ee8da8a4df185d579ec7a346",
+    "cases.py": "987bf9f60550cbad4895319c7a7339fcbbf9f233bd2ce2c26ab23325a2b656a8",
+    "dstar_adapter.py": "cbccdbf05b39844cbafbd17fb275ec327099e9289a9fab6fab0bb5e932e45701",
+    "dynamic_runner.py": "6bc7fbb887f9e8f871606cc71c0c2882580f53f33b530c6926980543eae111c3",
+    "run_checks.py": "21a0fdd9a666a4a138e745931a83acfcb232d6edd436d30b2dcca97e2185d79a",
+    "test_common.py": "d41a5ec7ce81e37217cb5a7f6e92f020b7bcf4fd3b56b101eac475c63fb4ee46",
+    "test_dstar.py": "7fbebd0ed301dc51c9826a99790af969cc9afd577b8c315a47fdb8c93ee59469",
+    "original_submissions\\astar_to_dstarlite.py": "0e0711700fa13b13e2a1df6e265e52c6eeba875f65e37b6227d1852f335bd0c1",
+    "original_submissions\\dfs_2_idastar.py": "1dbccce147471ceecdd95c89b7e067f452da25cb6a54ad497fceb9af4624d18c",
+    "original_submissions\\ucs_biucs_benchmark.py": "d45a13c9616f2a81908c0d11a92ff4375665a3ac515a935b2592787bc11feaf6",
+    "solvers\\astar_to_dstarlite.py": "0e0711700fa13b13e2a1df6e265e52c6eeba875f65e37b6227d1852f335bd0c1",
+    "solvers\\dfs_2_idastar.py": "ba2ab9e62bd61cdd520f03bcde1a5faf07ddb35801d1ae3ecc491bb21f1e25f0",
+    "solvers\\ucs_biucs_benchmark.py": "1f9b79037a2025f34f1960de4df7025935aca70775c2bddc13886bf96ec22590",
+    "solvers\\__init__.py": "c544aad85188b2f3cb7bce19a304872a25ad413fd22f35828f954c39b627b1d0"
+  },
+  "report_qa": {
+    "pdf_pages": 3,
+    "all_pages_a4": true,
+    "pdf_visually_reviewed": true,
+    "renderer": "Poppler",
+    "html_page_sections": 3,
+    "html_browser_render_checked": false,
+    "html_note": "Headless browser unavailable in sandbox; HTML structure checked."
+  }
+}

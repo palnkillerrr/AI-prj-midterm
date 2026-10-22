@@ -1,0 +1,16 @@
+[PASS] dry Arad->Bucharest (known optimum 418)            solve_d_star_lite    cost=418.0 expanded=5 extra={'iterations': 1, 'peak_frontier': 7, 'init_expanded': 5, 'replan_expanded': 0, 'km': 0.0, 'heuristic': 'euclid'} 
+[PASS] dry Arad->Bucharest (known optimum 418)            solve_astar          cost=418.0 expanded=6 extra={'iterations': 1, 'peak_frontier': 6, 'init_expanded': 6, 'replan_expanded': 0, 'heuristic': 'euclid'} 
+[PASS] random flood Arad->Bucharest                       solve_d_star_lite    cost=657.85 expanded=8 extra={'iterations': 1, 'peak_frontier': 6, 'init_expanded': 8, 'replan_expanded': 0, 'km': 0.0, 'heuristic': 'euclid'} 
+[PASS] random flood Arad->Bucharest                       solve_astar          cost=657.85 expanded=11 extra={'iterations': 1, 'peak_frontier': 6, 'init_expanded': 11, 'replan_expanded': 0, 'heuristic': 'euclid'} 
+[PASS] blocked Rimnicu-Pitesti                            solve_d_star_lite    cost=785.71 expanded=11 extra={'iterations': 1, 'peak_frontier': 6, 'init_expanded': 11, 'replan_expanded': 0, 'km': 0.0, 'heuristic': 'euclid'} 
+[PASS] blocked Rimnicu-Pitesti                            solve_astar          cost=785.71 expanded=11 extra={'iterations': 1, 'peak_frontier': 5, 'init_expanded': 11, 'replan_expanded': 0, 'heuristic': 'euclid'} 
+[PASS] dynamic replan at Sibiu (Rimnicu-Pitesti flooded)  solve_d_star_lite    cost=639.18 expanded=13 extra={'iterations': 2, 'peak_frontier': 9, 'init_expanded': 8, 'replan_expanded': 5, 'km': 121.17, 'heuristic': 'euclid'} 
+[PASS] dynamic replan at Sibiu (Rimnicu-Pitesti flooded)  solve_astar          cost=639.18 expanded=16 extra={'iterations': 2, 'peak_frontier': 6, 'init_expanded': 11, 'replan_expanded': 5, 'heuristic': 'euclid'} 
+[PASS] start == goal                                      solve_d_star_lite    cost=0.0 expanded=1 extra={'iterations': 1, 'peak_frontier': 3, 'init_expanded': 1, 'replan_expanded': 0, 'km': 0.0, 'heuristic': 'euclid'} 
+[PASS] start == goal                                      solve_astar          cost=0 expanded=1 extra={'iterations': 1, 'peak_frontier': 1, 'init_expanded': 1, 'replan_expanded': 0, 'heuristic': 'euclid'} 
+[PASS] unreachable goal (all Bucharest roads flooded)     solve_d_star_lite    cost=inf expanded=1 extra={'iterations': 1, 'peak_frontier': 1, 'init_expanded': 1, 'replan_expanded': 0, 'km': 0.0, 'heuristic': 'euclid'} 
+[PASS] unreachable goal (all Bucharest roads flooded)     solve_astar          cost=inf expanded=12 extra={'iterations': 1, 'peak_frontier': 5, 'init_expanded': 12, 'replan_expanded': 0, 'heuristic': 'euclid'} 
+[PASS] dict input (Section 12) Oradea->Giurgiu            solve_d_star_lite    cost=975.56 expanded=12 extra={'iterations': 1, 'peak_frontier': 6, 'init_expanded': 12, 'replan_expanded': 0, 'km': 0.0, 'heuristic': 'euclid'} 
+[PASS] dict input (Section 12) Oradea->Giurgiu            solve_astar          cost=975.56 expanded=12 extra={'iterations': 1, 'peak_frontier': 5, 'init_expanded': 12, 'replan_expanded': 0, 'heuristic': 'euclid'} 
+[PASS] heuristic Euclid <= step_cost tren moi canh Romania (admissible & consistent)
+SELF-TEST: PASS
